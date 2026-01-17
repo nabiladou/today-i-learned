@@ -2,10 +2,10 @@
 
 ## QUICK SUMMARY
 
-A **stateless** system does **not store any client-specific data between requests**. Each request is **independent** and contains all the information needed to be processed.
+A **stateless** system does **not store any client-specific data between requests**. Each request is **independent** and contains all the information needed to be processed. 
 
 A **stateful** system remembers information about previous interactions.
-Future requests **depend** on stored state.
+Future requests **depend** on stored state. 
 
 | Aspect      | Stateless | Stateful           |
 | ----------- | --------- | ------------------ |
@@ -15,11 +15,26 @@ Future requests **depend** on stored state.
 | Example     | REST APIs | Login sessions     |
 
 
+## RULE OF THUMB 
+
+- Use stateless systems when each request can stand alone.
+- Use stateful systems when requests depend on previous interactions.
+
+Example:
+
+Stateless: A REST API that send some info on every request — any server can handle it, and nothing is remembered.
+
+Stateful: A checkout flow that tracks a user’s cart and progress — each step depends on what happened before.
+
+➡️ Stateless = scalability and resilience
+➡️ Stateful = simplicity for multi-step, interactive workflows
+
+
 
 ## Stateless
 
 A **stateless** system does **not store any client-specific data between requests**.  
-Each request is **independent** and contains all the information needed to be processed.
+Each request is **independent** and contains all the information needed to be processed. 
 
 #### Key characteristics
 - No memory of past requests
@@ -41,7 +56,7 @@ Authorization: Bearer <JWT>
 ## Stateful 
 
 A **stateful** system remembers information about previous interactions.
-Future requests **depend** on stored state.
+Future requests **depend** on stored state. Stateful systems are better for complex interactions because they preserve context across steps, reduce repeated computation, enable real-time behavior, and simplify multi-step business logic.
 
 #### Key characteristics
 
